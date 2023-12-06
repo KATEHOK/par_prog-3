@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 	//available_threads = 1;
 	printf("OpenMP: %d; Threads: %d\n", _OPENMP, available_threads);
 
-	int count = 10000000, times = 2;
+	int count = 10000000, times = 10;
 	unsigned int* arr;
 	arr = (unsigned int*)malloc(sizeof(unsigned int) * count * times * available_threads);
 	if (arr == NULL) {
@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 	}
 	for (int i = 0; i < count * times * available_threads; ++i) rand_s(arr + i);
 
-	status = fprintf(file, "THREADS\tNUMBER\tTIME\n");
+	status = fprintf(file, "THREADS\tNUMBER\tTIME\t\tTIMES:\t%d\n", times);
 	if (status < 0) printf("Data was not written!\nError code: %d\n", status);
 
 	for (int threads = 0; threads < available_threads; ++threads)
