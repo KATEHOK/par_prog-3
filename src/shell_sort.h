@@ -1,4 +1,4 @@
-#ifndef SHELL_SORT
+﻿#ifndef SHELL_SORT
 
 #define SHELL_SORT
 #define _CRT_RAND_S

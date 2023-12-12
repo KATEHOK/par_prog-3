@@ -1,4 +1,4 @@
-#ifndef SHELL_SORT
+﻿#ifndef SHELL_SORT
 #include "shell_sort.h"
 #endif
 

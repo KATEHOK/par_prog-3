@@ -1,4 +1,4 @@
-#ifndef SHELL_SORT
+п»ї#ifndef SHELL_SORT
 #include "shell_sort.h"
 #endif
 
@@ -10,8 +10,8 @@ double shell_sort(unsigned int* arr, int count, int threads)
 
 	for (int d = count / 2; d > 0; d /= 2) {
 		#pragma omp parallel for num_threads(threads), private(k)
-		for (k = 0; k < d; ++k)						// каждый поток меняет только свои данные
-			for (int i = d + k; i < count; i += d)	// сортировка вставками
+		for (k = 0; k < d; ++k)						// РєР°Р¶РґС‹Р№ РїРѕС‚РѕРє РјРµРЅСЏРµС‚ С‚РѕР»СЊРєРѕ СЃРІРѕРё РґР°РЅРЅС‹Рµ
+			for (int i = d + k; i < count; i += d)	// СЃРѕСЂС‚РёСЂРѕРІРєР° РІСЃС‚Р°РІРєР°РјРё
 				for (int j = i - d; j >= 0; j -= d) {
 					if (arr[j] <= arr[j + d]) break;
 					unsigned int tmp = arr[j];
